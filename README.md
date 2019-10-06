@@ -7,7 +7,7 @@ Adding the _Middleware_ to your API will ensure that access is granted only usin
 ## Install
 
 ```bash
-composer require ds/laravel-firebase-auth
+composer require pechanxur/laravel-firebase-auth
 ```
 
 Publish the package's config.
@@ -27,7 +27,7 @@ There are two ways to use this.
 Add the _Middleware_ on your _Kernel.php_ file.
 
 ```php
-\ds\LaravelFirebaseAuth\Middleware\JWTAuth::class,
+\pechanxur\LaravelFirebaseAuth\Middleware\JWTAuth::class,
 ```
 
 ### 2. Lock access and identify the client requester
@@ -35,14 +35,14 @@ Add the _Middleware_ on your _Kernel.php_ file.
 Add the Service Provider to your config/app.php
 
 ```php
-ds\LaravelFirebaseAuth\FirebaseAuthServiceProvider::class,
+pechanxur\LaravelFirebaseAuth\FirebaseAuthServiceProvider::class,
 ```
 
 Register your new Guard on you AuthServiceProvider.php
 
 ```php
 $this->app['auth']->viaRequest('firebase', function ($request) {
-    return app(\ds\LaravelFirebaseAuth\Guard::class)->user($request);
+    return app(\pechanxur\LaravelFirebaseAuth\Guard::class)->user($request);
 });
 ```
 
@@ -52,7 +52,7 @@ Now on you auth.php configure you Guard driver to 'firebase'.
 'providers' => [
     'users' => [
         'driver' => 'firebase',
-        'model' => \ds\LaravelFirebaseAuth\User::class,
+        'model' => \pechanxur\LaravelFirebaseAuth\User::class,
     ],
 ],
 ```

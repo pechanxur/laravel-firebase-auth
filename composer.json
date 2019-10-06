@@ -1,5 +1,5 @@
 {
-    "name": "ds/laravel-firebase-auth",
+    "name": "pechanxur/laravel-firebase-auth",
     "description": "Secure your laravel API with Google Firebase Auth",
     "license": "MIT",
     "type": "library",
@@ -16,18 +16,18 @@
     "require-dev": {},
     "autoload": {
         "psr-4": {
-            "ds\\LaravelFirebaseAuth\\": "src/"
+            "pechanxur\\LaravelFirebaseAuth\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ds\\LaravelFirebaseAuth\\Test\\": "tests/"
+            "pechanxur\\LaravelFirebaseAuth\\Test\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ds\\LaravelFirebaseAuth\\FirebaseAuthServiceProvider"
+                "pechanxur\\LaravelFirebaseAuth\\FirebaseAuthServiceProvider"
             ]
         }
     }

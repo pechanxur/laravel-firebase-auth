@@ -1,6 +1,6 @@
 <?php
 
-namespace ds\LaravelFirebaseAuth;
+namespace pechanxur\LaravelFirebaseAuth;
 
 use Firebase\Auth\Token\Verifier;
 

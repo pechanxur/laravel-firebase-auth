@@ -1,6 +1,6 @@
 <?php
 
-namespace ds\LaravelFirebaseAuth\Middleware;
+namespace pechanxur\LaravelFirebaseAuth\Middleware;
 
 use Closure;
 use Firebase\Auth\Token\Verifier;
