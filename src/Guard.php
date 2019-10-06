@@ -1,5 +1,6 @@
 <?php
-namespace csrui\LaravelFirebaseAuth;
+
+namespace ds\LaravelFirebaseAuth;
 
 use Firebase\Auth\Token\Verifier;
 
@@ -12,15 +13,14 @@ class Guard
     {
         $this->verifier = $verifier;
     }
-    
+
     public function user($request)
     {
         $token = $request->bearerToken();
         try {
             $token = $this->verifier->verifyIdToken($token);
             return new User($token->getClaims());
-        }
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
             return;
         }
     }

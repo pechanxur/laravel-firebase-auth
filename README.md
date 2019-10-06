@@ -1,12 +1,13 @@
 # laravel-firebase-auth
+
 Secure your laravel API with Google Firebase Auth
 
-Adding the *Middleware* to your API will ensure that access is granted only using a valid Bearer Token issues by Goggle Firebase Auth.
+Adding the _Middleware_ to your API will ensure that access is granted only using a valid Bearer Token issues by Goggle Firebase Auth.
 
 ## Install
 
 ```bash
-composer require csrui/laravel-firebase-auth
+composer require ds/laravel-firebase-auth
 ```
 
 Publish the package's config.
@@ -23,10 +24,10 @@ There are two ways to use this.
 
 ### 1. Lock access without JWT token
 
-Add the *Middleware* on your *Kernel.php* file.
+Add the _Middleware_ on your _Kernel.php_ file.
 
 ```php
-\csrui\LaravelFirebaseAuth\Middleware\JWTAuth::class,
+\ds\LaravelFirebaseAuth\Middleware\JWTAuth::class,
 ```
 
 ### 2. Lock access and identify the client requester
@@ -34,14 +35,14 @@ Add the *Middleware* on your *Kernel.php* file.
 Add the Service Provider to your config/app.php
 
 ```php
-csrui\LaravelFirebaseAuth\FirebaseAuthServiceProvider::class,
+ds\LaravelFirebaseAuth\FirebaseAuthServiceProvider::class,
 ```
 
 Register your new Guard on you AuthServiceProvider.php
 
 ```php
 $this->app['auth']->viaRequest('firebase', function ($request) {
-    return app(\csrui\LaravelFirebaseAuth\Guard::class)->user($request);
+    return app(\ds\LaravelFirebaseAuth\Guard::class)->user($request);
 });
 ```
 
@@ -51,7 +52,7 @@ Now on you auth.php configure you Guard driver to 'firebase'.
 'providers' => [
     'users' => [
         'driver' => 'firebase',
-        'model' => \csrui\LaravelFirebaseAuth\User::class,
+        'model' => \ds\LaravelFirebaseAuth\User::class,
     ],
 ],
 ```

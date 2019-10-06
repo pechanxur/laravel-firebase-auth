@@ -1,6 +1,6 @@
 <?php
 
-namespace csrui\LaravelFirebaseAuth\Middleware;
+namespace ds\LaravelFirebaseAuth\Middleware;
 
 use Closure;
 use Firebase\Auth\Token\Verifier;
@@ -16,20 +16,19 @@ class JWTAuth
      */
     public function handle($request, Closure $next)
     {
-        if(!$request->hasHeader('Authorization')) {
+        if (!$request->hasHeader('Authorization')) {
             return response()->json('Authorization Header not found', 401);
         }
 
         $token = $request->bearerToken();
 
-        if($request->header('Authorization') == null || $token == null) {
+        if ($request->header('Authorization') == null || $token == null) {
             return response()->json('No token provided', 401);
         }
 
         $validation = $this->retrieveAndValidateToken($token);
 
-        if ($validation !== true) 
-        {
+        if ($validation !== true) {
             return $validation;
         }
 
@@ -42,8 +41,7 @@ class JWTAuth
         // TODO: Check the sintax on the config retreival
         $project_id = config('firebase.project_id');
 
-        if (empty($project_id)) 
-        {
+        if (empty($project_id)) {
             throw new \Exception('Missing FIREBASE_PROJECT_ID', 1);
         }
 
