@@ -62,8 +62,3 @@ TODO: Improve examples
 ## Support
 
 Feel free to open issues and provide feedback.
-
-
-## Notes
-
-This package its a fork from [this package](https://github.com/csrui/laravel-firebase-auth ) and updated to be compatible with latest version of laravel
