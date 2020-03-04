@@ -9,9 +9,9 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.3",
-        "kreait/firebase-tokens": "^1.9",
-        "illuminate/support": "^6.1",
-        "illuminate/contracts": "^6.1"
+        "kreait/firebase-tokens": "^1.10.0",
+        "illuminate/support": "^7.0.2",
+        "illuminate/contracts": "^7.0.2"
     },
     "require-dev": {},
     "autoload": {
